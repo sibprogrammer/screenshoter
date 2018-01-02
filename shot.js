@@ -36,4 +36,5 @@ const options = {
   await page.waitFor(options.delay);
   await page.screenshot({ path: options.outputFile });
   await browser.close();
+  console.log("Screenshot has been saved to " + options.outputFile);
 })();
