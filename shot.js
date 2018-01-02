@@ -28,8 +28,7 @@ const options = {
   const page = await browser.newPage();
   await page.setViewport({ width: options.width, height: options.height });
   if (options.cookie) {
-    const cookieName = options.cookie.split(':')[0];
-    const cookieValue = options.cookie.split(':')[1];
+    const [cookieName, cookieValue] = options.cookie.split(':');
     await page.setCookie({ name: cookieName, value: cookieValue, domain: url.parse(siteAddress).host });
   }
   await page.goto(siteAddress);
